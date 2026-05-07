@@ -18,12 +18,10 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${OutfitFont.className} h-full antialiased`}>
       <body suppressHydrationWarning>
         <Navbar />
-        <main className="max-w-[90%] mx-auto">
-          {children}
-        </main>
+        
+        <main className="max-w-[90%] mx-auto">{children}</main>
         <Footer />
 
-        
         <ToastProvider />
       </body>
     </html>
