@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div>
       <Banner />
-      <MarqueeBanner/>
+      <MarqueeBanner />
       <FeaturedBooks />
       <TopBooks />
       <ReadingHacks />

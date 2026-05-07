@@ -1,4 +1,4 @@
-# 📚  Online Book Borrowing Platform
+# 📚 Online Book Borrowing Platform
 
 A modern web application where users can explore, borrow, and manage books online with a smooth and user-friendly experience.
 
@@ -12,22 +12,22 @@ A modern web application where users can explore, borrow, and manage books onlin
 
 ## 🛠️ Tech Stack
 
-* **Frontend:** Next.js
-* **Styling:** Tailwind CSS, DaisyUI / HeroUI
-* **Authentication:** BetterAuth
-* **Language:** TypeScript / JavaScript
+- **Frontend:** Next.js
+- **Styling:** Tailwind CSS, DaisyUI / HeroUI
+- **Authentication:** BetterAuth
+- **Language:** TypeScript / JavaScript
 
 ---
 
 ## ✨ Features
 
-* 🔐 User Authentication (Sign Up / Login / Logout)
-* 👤 User Profile Management (Update Name & Image)
-* 📖 Browse Available Books
-* 📚 Borrow Books System
-* 📦 Book Availability Tracking
-* 🎯 Clean and Responsive UI
-* ⚡ Fast Performance with Next.js
+- 🔐 User Authentication (Sign Up / Sign In / Logout)
+- 👤 User Profile Management (Update Name & Image)
+- 📖 Browse Available Books
+- 📚 Borrow Books System
+- 📦 Book Availability Tracking
+- 🎯 Clean and Responsive UI
+- ⚡ Fast Performance with Next.js
 
 ---
 
@@ -74,23 +74,23 @@ NEXT_PUBLIC_BASE_URL=your_url
 AUTH_SECRET=your_secret
 ```
 
-*(Update based on your BetterAuth configuration)*
+_(Update based on your BetterAuth configuration)_
 
 ---
 
 ## 📸 Screenshots
 
-*(Add screenshots of your UI here)*
+_(Add screenshots of your UI here)_
 
 ---
 
 ## 🧠 Future Improvements
 
-* 📊 Admin Dashboard
-* 📅 Book Return Deadline System
-* 🔔 Notifications System
-* ⭐ Book Reviews & Ratings
-* 🔍 Advanced Search & Filters
+- 📊 Admin Dashboard
+- 📅 Book Return Deadline System
+- 🔔 Notifications System
+- ⭐ Book Reviews & Ratings
+- 🔍 Advanced Search & Filters
 
 ---
 

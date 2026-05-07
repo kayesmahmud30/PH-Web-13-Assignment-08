@@ -24,12 +24,12 @@ const Navbar = () => {
         <div className="flex gap-2 items-center">
           <Link href="/">
             <Image
-              src="https://i.ibb.co.com/FrTcrTb/nav-logo.png"
+              src="/e-book.png"
               alt="logo"
-              width={200}
-              height={200}
+              width={100}
+              height={70}
               priority
-              className="rounded"
+              className="rounded-full"
             />
           </Link>
         </div>
@@ -37,17 +37,26 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <ul className="hidden md:flex items-center gap-6 text-gray-600 font-semibold">
           <li>
-            <Link href="/" className="hover:text-black transition">
+            <Link
+              href="/"
+              className="hover:text-black transition border-2 border-gray-700 px-2 py-1 rounded-full"
+            >
               Home
             </Link>
           </li>
           <li>
-            <Link href="/all-books" className="hover:text-black transition">
+            <Link
+              href="/all-books"
+              className="hover:text-black transition border-2 border-gray-700 px-2 py-1 rounded-full"
+            >
               All Books
             </Link>
           </li>
           <li>
-            <Link href="/profile" className="hover:text-black transition">
+            <Link
+              href="/profile"
+              className="hover:text-black transition border-2 border-gray-700 px-2 py-1 rounded-full"
+            >
               Profile
             </Link>
           </li>
@@ -62,7 +71,7 @@ const Navbar = () => {
                 size="sm"
                 className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white"
               >
-                <Link href="/signin">Login</Link>
+                <Link href="/signin">Sign In</Link>
               </Button>
 
               <Button

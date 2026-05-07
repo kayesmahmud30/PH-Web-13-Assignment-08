@@ -3,35 +3,36 @@ import { FaGift } from "react-icons/fa";
 
 const MarqueeBanner = () => {
   return (
-    <div className="bg-[#F3E8FF] border-y border-purple-100 py-3 mb-8 rounded-md">
-      <Marquee pauseOnHover={true} speed={50}>
-        <div className="flex gap-20 items-center">
+    <div className="bg-[#F3E8FF] border-y border-purple-100 py-3 rounded-md">
+      <Marquee pauseOnHover={true} speed={100}>
+        <div className="md:py-8 flex gap-20 items-center">
           <div className="flex items-center gap-3 ml-10">
-            <span className="badge badge-primary badge-soft badge-outline ">
+            <span className="text-5xl badge badge-primary badge-soft badge-outline ">
               NEW{" "}
             </span>
 
-            <span className="text-gray-700 font-semibold text-sm md:text-base">
-              <span className="text-pink-600">The Silent Patient</span> is now
-              available in our collection
+            <span className="text-gray-700 font-semibold text-4xl">
+              <span className="text-4xl text-pink-600">The Silent Patient</span>{" "}
+              is now available in our collection
             </span>
           </div>
 
           <div className="flex items-center gap-3">
-            <span className="text-secondary">
+            <span className="text-secondary text-4xl">
               <FaGift />
             </span>
-            <span className="text-gray-700 font-medium text-sm md:text-base">
-              Get <span className="text-primary font-bold ">20% Off</span> on
-              Yearly Memberships
+            <span className="text-4xl text-gray-700">
+              Get{" "}
+              <span className="text-4xl text-primary font-bold ">20% Off</span>{" "}
+              on Yearly Memberships
             </span>
           </div>
 
           <div className="flex items-center gap-3">
-            <span className="text-secondary">
+            <span className="text-4xl text-secondary">
               <FaGift />
             </span>
-            <span className="text-gray-700 font-medium text-sm md:text-base">
+            <span className="text-gray-700 text-4xl">
               Flash Sale: The Great Gatsby at{" "}
               <span className="text-primary font-bold ">40% Off</span>
             </span>

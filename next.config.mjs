@@ -38,9 +38,9 @@ const nextConfig = {
         protocol: "https",
         hostname: "rigipublication.com",
         pathname: "/**",
-      }
-    ]
-  }
+      },
+    ],
+  },
 };
 
 export default nextConfig;

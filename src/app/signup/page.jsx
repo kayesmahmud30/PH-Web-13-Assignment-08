@@ -54,7 +54,7 @@ export default function SignUpPage() {
   };
 
   return (
-    <Card className="border mx-auto w-125 py-10 mt-5">
+    <Card className="border mx-auto max-w-125 py-10 mt-5">
       <h1 className="text-center text-2xl font-bold">Register Here</h1>
 
       <Form className="flex w-96 mx-auto flex-col gap-4" onSubmit={onSubmit}>
@@ -120,7 +120,7 @@ export default function SignUpPage() {
             Register
           </Button>
           <Button type="reset" onClick={() => router.push("/signin")}>
-            Login
+            Sign In
           </Button>
         </div>
       </Form>
@@ -130,7 +130,7 @@ export default function SignUpPage() {
         variant="tertiary"
         className={"w-full"}
       >
-        <GrGoogle /> Sign with Google
+        <GrGoogle />Sign Up with Google
       </Button>
     </Card>
   );
