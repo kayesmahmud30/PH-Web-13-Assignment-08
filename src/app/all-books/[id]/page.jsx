@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import books from "./data.json";
+import books from "http://localhost:3000/data.json";
 
 const categoryStyle = {
   Story: { bg: "bg-purple-50", text: "text-purple-800" },

@@ -50,6 +50,8 @@ export default function SignInPage() {
         })
     }
 
+    // console.log('Rendarig from ');
+
     return (
         <Card className="border mx-auto w-125 py-10 mt-5">
             <h1 className="text-center text-2xl font-bold">Log In Here</h1>

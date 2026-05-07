@@ -1,3 +1,4 @@
+"use client";
 import { Button, Card, Chip } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
