@@ -11,7 +11,7 @@ export default function BooksDetailsPage({ params }) {
   const { id } = params;
 
   // FIX: ensure string comparison (very important)
-  const book = booksData.find((b) => String(b.id) === String(id));
+  const book = `https://ph-web-13-assignment-08.vercel.app/data.json${id}`;
 
   // Not found UI
   if (!book) {
@@ -31,7 +31,7 @@ export default function BooksDetailsPage({ params }) {
 
       <div className="border border-gray-200 rounded-xl overflow-hidden bg-white">
         <div className="grid grid-cols-1 md:grid-cols-[400px_1fr]">
-          {/* IMAGE */}
+          {/* cover */}
           <div className="flex items-center p-4 justify-center border-b md:border-b-0 md:border-r border-gray-200">
             <div className="relative w-full h-[400px]">
               <Image
