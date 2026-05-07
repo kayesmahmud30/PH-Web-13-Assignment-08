@@ -10,18 +10,14 @@ export const revalidate = 0;
 
 const BooksDetailsPage = async ({ params }) => {
   const { id } = await params;
-  console.log("ID from params:", id);
 
   const res = await fetch(
     "https://ph-web-13-assignment-08.vercel.app/data.json",
-    { cache: "no-store" },
+    { cache: "no-store" }
   );
   const books = await res.json();
-  console.log("Books fetched:", books.length, "books");
-  console.log("First book:", books[0]);
 
   const book = books.find((b) => String(b.id) === String(id));
-  console.log("Looking for book with id:", id, "Found:", book);
 
   if (!book) {
     return (
