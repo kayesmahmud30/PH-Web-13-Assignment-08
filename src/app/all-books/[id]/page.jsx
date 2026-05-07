@@ -6,12 +6,15 @@ const categoryStyle = {
   Science: { bg: "bg-green-50", text: "text-green-800" },
 };
 
+export const revalidate = 0;
+
 const BooksDetailsPage = async ({ params }) => {
   const { id } = await params;
   console.log("ID from params:", id);
 
   const res = await fetch(
     "https://ph-web-13-assignment-08.vercel.app/data.json",
+    { cache: "no-store" },
   );
   const books = await res.json();
   console.log("Books fetched:", books.length, "books");
