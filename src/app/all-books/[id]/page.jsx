@@ -14,7 +14,7 @@ const BooksDetailsPage = async ({ params }) => {
   );
   const books = await res.json();
 
-  const book = books.find((b) => b.id === parseInt(id));
+  const book = books.find((b) => String(b.id) === String(id));
 
   if (!book) {
     return (
