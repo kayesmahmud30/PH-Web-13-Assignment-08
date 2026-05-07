@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 
 const categoryStyle = {
   Story: { bg: "bg-purple-50", text: "text-purple-800" },
@@ -15,7 +14,7 @@ const BooksDetailsPage = async ({ params }) => {
   );
   const books = await res.json();
 
-  const book = books.find((b) => b.id == id);
+  const book = books.find((b) => b.id === parseInt(id));
 
   if (!book) {
     return (

@@ -26,7 +26,7 @@ const BooksCard = ({ data }) => {
         <h2 className="font-bold text-lg">{data.title}</h2>
         <h5 className="font-semibold text-gray-500">{data.category}</h5>
       </div>
-      <Link href={`https://ph-web-13-assignment-08.vercel.app/all-books/${data.id}`}>
+      <Link href={`/all-books/${data.id}`}>
         <Button className="w-full">View Details</Button>
       </Link>
     </Card>
