@@ -1,16 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import books from "https://ph-web-13-assignment-08.vercel.app/data.json";
-
 const categoryStyle = {
   Story: { bg: "bg-purple-50", text: "text-purple-800" },
   Tech: { bg: "bg-blue-50", text: "text-blue-800" },
   Science: { bg: "bg-green-50", text: "text-green-800" },
 };
 
-const BooksDetailsPage = ({ params }) => {
+const BooksDetailsPage = async ({ params }) => {
   const { id } = params;
+
+  const res = await fetch("https://ph-web-13-assignment-08.vercel.app/data.json");
+  const books = await res.json();
 
   const book = books.find((b) => b.id == id);
 
@@ -31,7 +32,6 @@ const BooksDetailsPage = ({ params }) => {
 
       <div className="border border-gray-200 rounded-xl overflow-hidden bg-white">
         <div className="grid grid-cols-1 md:grid-cols-[400px_1fr]">
-          {/* cover */}
           <div className="flex items-center p-4 justify-center border-b md:border-b-0 md:border-r border-gray-200">
             <div className="relative w-full h-100">
               <Image
@@ -43,12 +43,9 @@ const BooksDetailsPage = ({ params }) => {
             </div>
           </div>
 
-          {/* info */}
           <div className="p-8 flex flex-col gap-5">
             <div>
-              <span
-                className={`text-xs px-3 py-1 rounded-full font-medium ${cat.bg} ${cat.text}`}
-              >
+              <span className={`text-xs px-3 py-1 rounded-full font-medium ${cat.bg} ${cat.text}`}>
                 {book.category}
               </span>
             </div>
