@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import books from "http://localhost:3000/data.json";
+import books from "https://ph-web-13-assignment-08.vercel.app/data.json";
 
 const categoryStyle = {
   Story: { bg: "bg-purple-50", text: "text-purple-800" },
