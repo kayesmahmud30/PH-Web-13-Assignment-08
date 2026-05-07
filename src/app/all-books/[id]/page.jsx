@@ -1,7 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
-
-import books from "@/data/data.json";
 
 const categoryStyle = {
   Story: { bg: "bg-purple-50", text: "text-purple-800" },
@@ -9,14 +6,27 @@ const categoryStyle = {
   Science: { bg: "bg-green-50", text: "text-green-800" },
 };
 
-const BooksDetailsPage = ({ params }) => {
-  const { id } = params;
+const BooksDetailsPage = async ({ params }) => {
+  const { id } = await params;
+
+  // Fetch JSON from public folder
+  const res = await fetch("http://localhost:3000/data.json", {
+    cache: "no-store",
+  });
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch books");
+  }
+
+  const books = await res.json();
 
   const book = books.find((b) => b.id == id);
 
   if (!book) {
     return (
-      <div className="text-center py-20 text-gray-400">Book not found.</div>
+      <div className="text-center py-20 text-gray-400">
+        Book not found.
+      </div>
     );
   }
 
@@ -27,13 +37,16 @@ const BooksDetailsPage = ({ params }) => {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-10">
-      <h1 className="text-xl font-medium mb-6">Book details</h1>
+      <h1 className="text-xl font-medium mb-6">
+        Book details
+      </h1>
 
       <div className="border border-gray-200 rounded-xl overflow-hidden bg-white">
         <div className="grid grid-cols-1 md:grid-cols-[400px_1fr]">
-          {/* cover */}
-          <div className="flex items-center p-4 justify-center border-b md:border-b-0 md:border-r border-gray-200">
-            <div className="relative w-full h-100">
+
+          {/* Cover */}
+          <div className="flex items-center justify-center p-4 border-b md:border-b-0 md:border-r border-gray-200">
+            <div className="relative w-full h-[400px]">
               <Image
                 src={book.image_url}
                 alt={book.title}
@@ -43,8 +56,10 @@ const BooksDetailsPage = ({ params }) => {
             </div>
           </div>
 
-          {/* info */}
+          {/* Info */}
           <div className="p-8 flex flex-col gap-5">
+
+            {/* Category */}
             <div>
               <span
                 className={`text-xs px-3 py-1 rounded-full font-medium ${cat.bg} ${cat.text}`}
@@ -53,48 +68,76 @@ const BooksDetailsPage = ({ params }) => {
               </span>
             </div>
 
+            {/* Title */}
             <div>
               <h2 className="text-2xl font-medium leading-snug">
                 {book.title}
               </h2>
-              <p className="text-sm text-gray-500 mt-1">by {book.author}</p>
+
+              <p className="text-sm text-gray-500 mt-1">
+                by {book.author}
+              </p>
             </div>
 
             <hr className="border-gray-100" />
 
+            {/* Description */}
             <p className="text-sm text-gray-500 leading-relaxed">
               {book.description}
             </p>
 
+            {/* Stats */}
             <div className="grid grid-cols-2 gap-3">
+
               <div className="bg-gray-50 rounded-lg p-3">
-                <p className="text-xs text-gray-400 mb-1">Category</p>
-                <p className="text-sm font-medium">{book.category}</p>
+                <p className="text-xs text-gray-400 mb-1">
+                  Category
+                </p>
+
+                <p className="text-sm font-medium">
+                  {book.category}
+                </p>
               </div>
 
               <div className="bg-gray-50 rounded-lg p-3">
-                <p className="text-xs text-gray-400 mb-1">Available copies</p>
+                <p className="text-xs text-gray-400 mb-1">
+                  Available copies
+                </p>
+
                 <p className="text-sm font-medium text-green-700">
                   {book.available_quantity} copies left
                 </p>
               </div>
 
               <div className="bg-gray-50 rounded-lg p-3">
-                <p className="text-xs text-gray-400 mb-1">Author</p>
-                <p className="text-sm font-medium">{book.author}</p>
+                <p className="text-xs text-gray-400 mb-1">
+                  Author
+                </p>
+
+                <p className="text-sm font-medium">
+                  {book.author}
+                </p>
               </div>
 
               <div className="bg-gray-50 rounded-lg p-3">
-                <p className="text-xs text-gray-400 mb-1">Book ID</p>
-                <p className="text-sm font-medium">#{book.id}</p>
+                <p className="text-xs text-gray-400 mb-1">
+                  Book ID
+                </p>
+
+                <p className="text-sm font-medium">
+                  #{book.id}
+                </p>
               </div>
+
             </div>
 
+            {/* Button */}
             <div className="mt-auto pt-2">
               <button className="bg-blue-700 hover:bg-blue-800 text-white text-sm px-6 py-2.5 rounded-lg transition-colors">
                 Borrow this book
               </button>
             </div>
+
           </div>
         </div>
       </div>
