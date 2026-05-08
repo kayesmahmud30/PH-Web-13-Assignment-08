@@ -14,6 +14,7 @@ import {
   TextField,
 } from "@heroui/react";
 import { GrGoogle } from "react-icons/gr";
+import Link from "next/link";
 
 export default function SignInPage() {
   const onSubmit = async (e) => {
@@ -113,8 +114,12 @@ export default function SignInPage() {
         variant="tertiary"
         className={"w-full"}
       >
-        <GrGoogle />Sign in with Google
+        <GrGoogle />
+        Sign in with Google
       </Button>
+      <Link className="mx-auto mt-2 text-blue-700" href={"/signup"}>
+        Create account now!
+      </Link>
     </Card>
   );
 }

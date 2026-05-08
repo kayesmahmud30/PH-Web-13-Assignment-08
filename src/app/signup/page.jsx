@@ -15,6 +15,7 @@ import {
 } from "@heroui/react";
 import { useRouter } from "next/navigation";
 import { GrGoogle } from "react-icons/gr";
+import Link from "next/link";
 
 export default function SignUpPage() {
   const router = useRouter();
@@ -130,8 +131,12 @@ export default function SignUpPage() {
         variant="tertiary"
         className={"w-full"}
       >
-        <GrGoogle />Sign Up with Google
+        <GrGoogle />
+        Sign Up with Google
       </Button>
+      <Link className="mx-auto mt-2 text-blue-700" href={"/signin"}>
+        Already have an account? Sign in!
+      </Link>
     </Card>
   );
 }
