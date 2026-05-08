@@ -1,2 +1,33 @@
 @import "tailwindcss";
-@import "@heroui/styles"; 
+@import "@heroui/styles";
+@import "animate.css/animate.min.css";
+
+.shake-button {
+  animation-name: shake-delay;
+  animation-duration: 4s;
+  animation-delay: 2.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake-delay {
+  0%,
+  10%,
+  20%,
+  100% {
+    transform: translateX(0);
+  }
+  2% {
+    transform: translateX(-2px);
+  }
+  4% {
+    transform: translateX(2px);
+  }
+  6% {
+    transform: translateX(-2px);
+  }
+  8% {
+    transform: translateX(2px);
+  }
+}

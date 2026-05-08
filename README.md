@@ -27,6 +27,7 @@ This project includes book browsing, search, category filtering, detail pages, a
 - **MongoDB** with `@better-auth/mongo-adapter`
 - **react-toastify** for toast notifications
 - **framer-motion** for UI motion effects
+- **Animate.css** for UI shaking effects
 - **react-icons** and **@gravity-ui/icons** for iconography
 
 ---
