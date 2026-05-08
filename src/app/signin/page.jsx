@@ -118,7 +118,7 @@ export default function SignInPage() {
         Sign in with Google
       </Button>
       <Link className="mx-auto mt-2 text-blue-700" href={"/signup"}>
-        Create account now!
+        Create an account now!
       </Link>
     </Card>
   );
