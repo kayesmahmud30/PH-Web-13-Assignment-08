@@ -98,12 +98,6 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 
-## 🙌 License
-
-This project is for learning and demo purposes.
-
----
-
 ## 🌐 Live Demo
 
 View the deployed version here: [https://ph-web-13-assignment-08.vercel.app](https://ph-web-13-assignment-08.vercel.app)
