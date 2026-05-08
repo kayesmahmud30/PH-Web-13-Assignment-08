@@ -11,10 +11,9 @@ export const revalidate = 0;
 const BooksDetailsPage = async ({ params }) => {
   const { id } = await params;
 
-  const res = await fetch(
-    "https://ph-web-13-assignment-08.vercel.app/data.json",
-    { cache: "no-store" },
-  );
+  const res = await fetch(`${process.env.BETTER_AUTH_URL}/data.json`, {
+    cache: "no-store",
+  });
   const books = await res.json();
 
   const book = books.find((b) => String(b.id) === String(id));

@@ -1,14 +1,15 @@
 import BooksCard from "@/components/BooksCard";
 import Category from "@/components/Category";
+import { Label, SearchField } from "@heroui/react";
 
 const AllBooks = async ({ searchParams }) => {
   const { category } = await searchParams;
 
   const [booksRes, categoryRes] = await Promise.all([
-    fetch("https://ph-web-13-assignment-08.vercel.app/data.json", {
+    fetch(`${process.env.BETTER_AUTH_URL}/data.json`, {
       cache: "no-store",
     }),
-    fetch("https://ph-web-13-assignment-08.vercel.app/category.json", {
+    fetch(`${process.env.BETTER_AUTH_URL}/category.json`, {
       cache: "no-store",
     }),
   ]);
@@ -24,6 +25,19 @@ const AllBooks = async ({ searchParams }) => {
 
   return (
     <div>
+      <div className=" space-y-4 mt-5">
+        <SearchField fullWidth name="search" className="flex">
+          <Label>Search Book</Label>
+          <SearchField.Group className="border-2 border-blue-600">
+            <SearchField.SearchIcon />
+            <SearchField.Input placeholder="Search..." />
+            <SearchField.ClearButton />
+            <button className="bg-blue-500 p-10 text-white font-semibold">
+              Search
+            </button>
+          </SearchField.Group>
+        </SearchField>
+      </div>
       <h3 className="font-semibold text-2xl my-8">All Books</h3>
 
       <Category categories={categories} />

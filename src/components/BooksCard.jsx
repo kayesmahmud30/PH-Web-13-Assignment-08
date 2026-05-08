@@ -2,8 +2,14 @@
 import { Button, Card, Chip } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
+import { authClient } from "@/lib/auth-client";
 
 const BooksCard = ({ data }) => {
+  const userData = authClient.useSession();
+  const user = userData.data?.user;
+  const isLoggedIn = !!user;
+  
+
   return (
     <Card
       className="bg-white p-6 rounded-lg  
@@ -26,7 +32,7 @@ const BooksCard = ({ data }) => {
         <h2 className="font-bold text-lg">{data.title}</h2>
         <h5 className="font-semibold text-gray-500">{data.category}</h5>
       </div>
-      <Link href={`/all-books/${data.id}`}>
+    <Link href={isLoggedIn ? `/all-books/${data.id}` : "/signin"}>
         <Button className="w-full">View Details</Button>
       </Link>
     </Card>
