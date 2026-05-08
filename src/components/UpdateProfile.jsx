@@ -22,10 +22,11 @@ export function UpdateProfile() {
 
       toast.success("Profile updated successfully ✅");
 
-      window.location.reload();
+      setTimeout(() => {
+        window.location.reload();
+      }, 2000);
     } catch (error) {
       toast.error("Update failed ❌");
-      console.error(error);
     }
   };
 

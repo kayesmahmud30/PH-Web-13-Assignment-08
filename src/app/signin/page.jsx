@@ -53,7 +53,7 @@ export default function SignInPage() {
     <Card className="border mx-auto max-w-125 py-10 mt-5">
       <h1 className="text-center text-2xl font-bold">Sign In Here</h1>
 
-      <Form className="flex w-96 mx-auto flex-col gap-4" onSubmit={onSubmit}>
+      <Form className="flex mx-auto flex-col gap-4" onSubmit={onSubmit}>
         <TextField
           isRequired
           name="email"
