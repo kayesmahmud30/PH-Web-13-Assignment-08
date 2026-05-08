@@ -12,7 +12,7 @@ const MarqueeBanner = () => {
             </span>
 
             <span className="text-gray-700 font-semibold text-4xl">
-              <span className="text-4xl text-pink-600">The Silent Patient</span>{" "}
+              <span className="text-4xl text-pink-600">The Silent Forest</span>{" "}
               is now available in our collection
             </span>
           </div>
