@@ -31,12 +31,12 @@ const AllBooks = async ({ searchParams }) => {
 
   return (
     <div>
-      <div className=" space-y-4 mt-5">
+      <div className="xl:w-[40%] w-full space-y-4 mt-5">
         <form method="get" className="flex">
           {category && <input type="hidden" name="category" value={category} />}
           <SearchField fullWidth name="search" className="flex">
             <Label>Search your favorite book</Label>
-            <SearchField.Group className="relative border-2 border-blue-600">
+            <SearchField.Group className="h-10 relative border border-blue-600">
               <SearchField.SearchIcon />
               <SearchField.Input placeholder="Search..." />
               <SearchField.ClearButton />
