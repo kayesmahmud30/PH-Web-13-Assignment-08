@@ -35,14 +35,14 @@ const AllBooks = async ({ searchParams }) => {
         <form method="get" className="flex">
           {category && <input type="hidden" name="category" value={category} />}
           <SearchField fullWidth name="search" className="flex">
-            <Label>Search Book</Label>
-            <SearchField.Group className="border-2 border-blue-600">
+            <Label>Search your favorite book</Label>
+            <SearchField.Group className="relative border-2 border-blue-600">
               <SearchField.SearchIcon />
               <SearchField.Input placeholder="Search..." />
               <SearchField.ClearButton />
               <button
                 type="submit"
-                className="bg-blue-500 p-10 text-white font-semibold"
+                className="absolute right-0 bg-blue-500 py-10 px-5 text-white font-semibold"
               >
                 Search
               </button>

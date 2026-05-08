@@ -1,4 +1,5 @@
 import Image from "next/image";
+import BorrowButton from "@/components/BorrowButton";
 
 const categoryStyle = {
   Story: { bg: "bg-purple-50", text: "text-purple-800" },
@@ -93,9 +94,7 @@ const BooksDetailsPage = async ({ params }) => {
             </div>
 
             <div className="mt-auto pt-2">
-              <button className="bg-blue-700 hover:bg-blue-800 text-white text-sm px-6 py-2.5 rounded-lg transition-colors">
-                Borrow this book
-              </button>
+              <BorrowButton bookTitle={book.title} />
             </div>
           </div>
         </div>

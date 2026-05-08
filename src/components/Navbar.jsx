@@ -3,14 +3,17 @@ import Image from "next/image";
 import Link from "next/link";
 import { Avatar, Button } from "@heroui/react";
 import { authClient } from "@/lib/auth-client";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { useState } from "react";
 
 const Navbar = () => {
   const userData = authClient.useSession();
   const user = userData.data?.user;
   const router = useRouter();
+  const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const isActive = (path) => pathname === path;
 
   const handleSignOut = async () => {
     await authClient.signOut();
@@ -39,7 +42,11 @@ const Navbar = () => {
           <li>
             <Link
               href="/"
-              className="hover:text-black transition border-2 border-gray-700 px-2 py-1 rounded-full"
+              className={`transition border-2 px-2 py-1 rounded-full ${
+                isActive("/")
+                  ? "bg-blue-600 text-white border-blue-600"
+                  : "border-gray-700 text-gray-600 hover:text-black"
+              }`}
             >
               Home
             </Link>
@@ -47,7 +54,11 @@ const Navbar = () => {
           <li>
             <Link
               href="/all-books"
-              className="hover:text-black transition border-2 border-gray-700 px-2 py-1 rounded-full"
+              className={`transition border-2 px-2 py-1 rounded-full ${
+                isActive("/all-books")
+                  ? "bg-blue-600 text-white border-blue-600"
+                  : "border-gray-700 text-gray-600 hover:text-black"
+              }`}
             >
               All Books
             </Link>
@@ -55,7 +66,11 @@ const Navbar = () => {
           <li>
             <Link
               href="/profile"
-              className="hover:text-black transition border-2 border-gray-700 px-2 py-1 rounded-full"
+              className={`transition border-2 px-2 py-1 rounded-full ${
+                isActive("/profile")
+                  ? "bg-blue-600 text-white border-blue-600"
+                  : "border-gray-700 text-gray-600 hover:text-black"
+              }`}
             >
               Profile
             </Link>
@@ -136,7 +151,11 @@ const Navbar = () => {
               <Link
                 href="/"
                 onClick={() => setMenuOpen(false)}
-                className="hover:text-black"
+                className={`${
+                  isActive("/")
+                    ? "text-blue-600 font-bold"
+                    : "text-gray-600 hover:text-black"
+                }`}
               >
                 Home
               </Link>
@@ -145,7 +164,11 @@ const Navbar = () => {
               <Link
                 href="/all-books"
                 onClick={() => setMenuOpen(false)}
-                className="hover:text-black"
+                className={`${
+                  isActive("/all-books")
+                    ? "text-blue-600 font-bold"
+                    : "text-gray-600 hover:text-black"
+                }`}
               >
                 All Books
               </Link>
@@ -154,7 +177,11 @@ const Navbar = () => {
               <Link
                 href="/profile"
                 onClick={() => setMenuOpen(false)}
-                className="hover:text-black"
+                className={`${
+                  isActive("/profile")
+                    ? "text-blue-600 font-bold"
+                    : "text-gray-600 hover:text-black"
+                }`}
               >
                 Profile
               </Link>
