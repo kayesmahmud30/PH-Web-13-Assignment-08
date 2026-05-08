@@ -6,7 +6,7 @@ This project includes book browsing, search, category filtering, detail pages, a
 
 ---
 
-## ✨ Features
+## ✨ Key Features
 
 - ✅ Home page with featured books and categories
 - 🔎 Search books by title, author, or description

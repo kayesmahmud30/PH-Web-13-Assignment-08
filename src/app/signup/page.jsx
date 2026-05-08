@@ -120,8 +120,8 @@ export default function SignUpPage() {
             <Check />
             Register
           </Button>
-          <Button type="reset" onClick={() => router.push("/signin")}>
-            Sign In
+          <Button className="bg-transparent text-blue-600 border-2 border-blue-600" type="reset">
+            Reset
           </Button>
         </div>
       </Form>
