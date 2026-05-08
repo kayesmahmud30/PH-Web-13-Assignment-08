@@ -13,7 +13,7 @@ const BooksDetailsPage = async ({ params }) => {
 
   const res = await fetch(
     "https://ph-web-13-assignment-08.vercel.app/data.json",
-    { cache: "no-store" }
+    { cache: "no-store" },
   );
   const books = await res.json();
 
